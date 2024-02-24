@@ -10,4 +10,5 @@ jobs:
               run: |
                 echo "Issue Number: ${{ toJSON(github.event.issue.number) }}"
                 echo "Issue Title: ${{ toJson(github.event.issue.title) }}"
+                echo "Issue Status: ${{ toJson(github.event.issue.state) }}"
                 echo "Issue Status: ${{ toJson(github.event.issue.milestone.state) }}"
