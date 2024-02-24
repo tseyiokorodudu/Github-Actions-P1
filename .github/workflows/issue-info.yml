@@ -1,0 +1,13 @@
+name: Output Issue Information
+on:
+    issues:
+        types: [opened, edited, milestoned]
+jobs: 
+    issue-info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output Issue Information
+              run: |
+                echo "Issue Number: ${{ toJSON(github.event.issue.number) }}"
+                echo "Issue Title: ${{ toJson(github.event.issue.title) }}"
+                echo "Issue Status: ${{ toJson(github.event.issue.milestone.state) }}"
